@@ -1,0 +1,6 @@
+kanta = int(input("kanta: "))
+korkeus = int(input("korkeus: "))
+pinta_ala = (korkeus*kanta)
+print(pinta_ala)
+piiri = (korkeus*2 + kanta*2)
+print(piiri)
