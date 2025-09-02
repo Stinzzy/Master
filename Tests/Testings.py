@@ -1,11 +1,20 @@
-def lista_num(kokonaisluvut):
-    summa = 0
-    for kokonaisluku in kokonaisluvut:
-        summa += kokonaisluku
-    return summa
+import mysql.connector
+
+yhteys = mysql.connector.connect(
+    host='127.0.0.1',
+    port= 3306,
+    database='ankkalinna',
+    user='tozzy',
+    password='Marianhomeboy23',
+    autocommit=True
+    )
 
 
-lista = (3, 8, 2, 2, 3)
-tulos = lista_num(lista)
-print("listan: ", lista)
-print("summa:", tulos)
+sql = "SELECT * FROM ankkalinnalainen"
+kursori = yhteys.cursor()
+kursori.execute(sql)
+tulos = kursori.fetchall()
+
+print("kaikki tiedot:")
+for rivi in tulos:
+    print(", ".join(str(sarake)for sarake in rivi))

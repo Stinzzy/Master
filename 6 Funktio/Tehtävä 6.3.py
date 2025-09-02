@@ -8,4 +8,3 @@ while True:
         break
     litrat = gl_l(gallona)
     print(f"{gallona} galloonaa on {litrat:.2f} litraa")
-
