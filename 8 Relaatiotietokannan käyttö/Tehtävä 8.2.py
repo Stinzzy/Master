@@ -9,7 +9,7 @@ yhteys = mysql.connector.connect(
     )
 kursori = yhteys.cursor()
 
-maakoodi = input("anna maakoodi: ").upper()
+maakoodi = input("Anna maakoodi: ").upper()
 
 sql ="""
 SELECT  type, COUNT(*)
